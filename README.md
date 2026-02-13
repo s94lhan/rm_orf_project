@@ -74,10 +74,13 @@ Step 3: Generate Figures
 Figure 5-2: CATE calibration plots
 Figure 5-9: Misspecification diagnostics
 These are generated automatically after running main.py.
+Automatically generated after running the corresponding DGP.
 
 (B) Z-Statistic Calibration Diagnostics
-Generate boxplots of Z-statistics:
+Generate boxplots of Z-statistics
+Make sure you are in the rm_orf_project directory::
 ```bash
+cd rm_orf_project
 python check_z.py
 ```
 Outputs are saved in:
@@ -93,7 +96,12 @@ Figure 5-7
 Figure 5-8
 Example reproduction command:
 ```bash
-python -c "from visualization import plot_fig5_X_from_merged_csv; plot_fig5_X_from_merged_csv('summary_all.csv','plots_report',1000)"
+python -c "from visualization import plot_fig5_1_from_merged_csv; plot_fig5_1_from_merged_csv('summary_all.csv','plots_report',1000)"
+python -c "from visualization import plot_fig5_3_from_merged_csv; plot_fig5_3_from_merged_csv('summary_all.csv','plots_report',1000)"
+python -c "from visualization import plot_fig5_5_from_merged_csv; plot_fig5_5_from_merged_csv('summary_all.csv','plots_report',1000)"
+python -c "from visualization import plot_fig5_6_from_merged_csv; plot_fig5_6_from_merged_csv('summary_all.csv','plots_report',1000)"
+python -c "from visualization import plot_fig5_7_from_merged_csv; plot_fig5_7_from_merged_csv('summary_all.csv','plots_report',1000)"
+python -c "from visualization import plot_fig5_8_from_merged_csv; plot_fig5_8_from_merged_csv('summary_all.csv','plots_report',1000)"
 ```
 All figures are saved in:
 plots_report/
