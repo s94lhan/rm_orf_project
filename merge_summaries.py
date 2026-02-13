@@ -6,7 +6,9 @@ def main():
 
     print("[INFO] BASE_DIR =", BASE_DIR)
 
-    dgp_dirs = sorted([p for p in BASE_DIR.iterdir() if p.is_dir() and p.name.startswith("results_DGP")])
+    RESULTS_DIR = BASE_DIR / "results"
+
+    dgp_dirs = sorted([p for p in RESULTS_DIR.iterdir() if p.is_dir() and p.name.startswith("results_DGP")])
 
     print(f"[INFO] Found {len(dgp_dirs)} folders startswith('results_DGP'):")
     for p in dgp_dirs[:20]:
@@ -48,7 +50,7 @@ def main():
         raise SystemExit(1)
 
     summary_all = pd.concat(all_dfs, ignore_index=True)
-    out_path = BASE_DIR / "summary_all.csv"
+    out_path = RESULTS_DIR / "summary_all.csv"
     summary_all.to_csv(out_path, index=False)
 
     print("\n[DONE] Merged summary saved to:", out_path)

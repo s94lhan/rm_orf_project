@@ -51,8 +51,8 @@ def plot_box(
 
 
 def main():
-    csv_path = "metrics_long_all.csv"
-    outdir = "z_diagnostics_all"
+    csv_path = "results/metrics_long_all.csv"
+    outdir = "results/z_diagnostics_all"
 
     if not os.path.exists(csv_path):
         raise FileNotFoundError(

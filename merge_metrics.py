@@ -7,9 +7,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--base_dir", type=str, default=None,
                     help="Base directory containing results_DGP*/ folders. Default: directory of this script.")
-    ap.add_argument("--pattern", type=str, default="results_DGP*/metrics_long.csv",
+    ap.add_argument("--pattern", type=str, default="results/results_DGP*/metrics_long.csv",
                     help="Glob pattern under base_dir to find metrics_long.csv files.")
-    ap.add_argument("--out", type=str, default="metrics_long_all.csv",
+    ap.add_argument("--out", type=str, default="results/metrics_long_all.csv",
                     help="Output merged csv filename (saved under base_dir).")
     args = ap.parse_args()
 

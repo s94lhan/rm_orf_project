@@ -6,7 +6,7 @@ The project is modularized to ensure clarity, reproducibility, and extensibility
 
 ---
 
-# 1. Computational Environment
+## 1. Computational Environment
 
 Experiments were conducted in:
 
@@ -28,45 +28,61 @@ Install dependencies using:
 ```bash
 python -m pip install --upgrade pip
 python -m pip install numpy scipy pandas scikit-learn joblib tqdm matplotlib econml
+
 ```
 
 # 2. Project Structure
+All experiment outputs are stored under results/ (ignored by git via .gitignore).
 ```
 rm_orf_project/
-│
 ├── main.py                # Monte Carlo experiment entry point
-├── config.py              # DGP configurations and global settings
-├── dgp.py                 # Data-generating processes
-├── models.py              # ORF, CF, DML-CF implementations
+├── config.py              # Global configuration & experiment settings
+├── dgp.py                 # Data Generating Processes (DGPs)
+├── models.py              # ORF / CF / DML-CF implementations
 ├── metrics.py             # Evaluation metrics
 ├── simulation.py          # Monte Carlo execution engine
 ├── merge_metrics.py       # Merge metrics across DGP folders
+│                          # results/metrics_long_all.csv
 ├── merge_summaries.py     # Merge summary tables
-├── visualization.py       # Generates all main figures
+│                          # results/summary_all.csv
+├── visualization.py       # Generate main figures (Figure 5.x)
 ├── check_z.py             # Z-statistic calibration diagnostics
 ├── mcs_test.py            # Model Confidence Set (MCS) analysis
+├── results/               # All experiment outputs
+│   ├── results_DGP*/      # Raw analog output of each DGP
+│   ├── metrics_long_all.csv   # Merged Indicators
+│   ├── summary_all.csv        # Summarize statistical results (plot input)
+│   ├── z_diagnostics_all/     # Z-statistical calibration diagnostic chart
+│   ├── plots_report/          # Paper Figure Output
+│   └── mcs_results.csv        # MCS
+├── .gitignore             # Ignore results & temporary files
+└── README.md              # Project overview & reproduction guide
+
 ```
 
 # 3. How to Reproduce Results
-Step 1: Run Simulations for a Single DGP
+Important: run commands inside the rm_orf_project directory.
 
+Step 1: Run Simulations for a Single DGP
 Example command:
 ```bash
-python main.py --outdir results_DGP0 --seed 123 --R 30 --dgps DGP0 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
-python main.py --outdir results_DGP1 --seed 123 --R 30 --dgps DGP1 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
-python main.py --outdir results_DGP2 --seed 123 --R 30 --dgps DGP2 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
-python main.py --outdir results_DGP3 --seed 123 --R 30 --dgps DGP3 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
-python main.py --outdir results_DGP4 --seed 123 --R 30 --dgps DGP4 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
-python main.py --outdir results_DGP5 --seed 123 --R 30 --dgps DGP5 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
-python main.py --outdir results_DGP6 --seed 123 --R 30 --dgps DGP6 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
-python main.py --outdir results_DGP7 --seed 123 --R 30 --dgps DGP7 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
-python main.py --outdir results_DGP8 --seed 123 --R 30 --dgps DGP8 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
-python main.py --outdir results_DGP_RCT --seed 123 --R 30 --dgps RCT --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results/results_DGP0 --seed 123 --R 30 --dgps DGP0 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results/results_DGP1 --seed 123 --R 30 --dgps DGP1 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results/results_DGP2 --seed 123 --R 30 --dgps DGP2 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results/results_DGP3 --seed 123 --R 30 --dgps DGP3 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results/results_DGP4 --seed 123 --R 30 --dgps DGP4 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results/results_DGP5 --seed 123 --R 30 --dgps DGP5 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results/results_DGP6 --seed 123 --R 30 --dgps DGP6 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results/results_DGP7 --seed 123 --R 30 --dgps DGP7 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results/results_DGP8 --seed 123 --R 30 --dgps DGP8 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results/results_DGP_RCT --seed 123 --R 30 --dgps RCT --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
 
 ```
 This generates result folders such as:
-results_DGP0
-Repeat for other DGPs as needed.
+results/results_DGP0
+results/results_DGP1
+...
+results/results_DGP_RCT
 
 
 Step 2: Merge Results Across DGPs
@@ -76,8 +92,8 @@ python merge_metrics.py
 python merge_summaries.py
 ```
 This produces:
-metrics_long_all.csv
-summary_all.csv
+results/metrics_long_all.csv
+results/summary_all.csv
 
 Step 3: Generate Figures
 (A) Figures Generated per DGP (No Merge Required)
@@ -94,7 +110,7 @@ cd rm_orf_project
 python check_z.py
 ```
 Outputs are saved in:
-z_diagnostics_all
+results/z_diagnostics_all/
 
 (C) Figures Based on Merged Results
 The following figures use summary_all.csv:
@@ -106,25 +122,25 @@ Figure 5-7
 Figure 5-8
 Example reproduction command:
 ```bash
-python -c "from visualization import plot_fig5_1_from_merged_csv; plot_fig5_1_from_merged_csv('summary_all.csv','plots_report',1000)"
-python -c "from visualization import plot_fig5_3_from_merged_csv; plot_fig5_3_from_merged_csv('summary_all.csv','plots_report',1000)"
-python -c "from visualization import plot_fig5_5_from_merged_csv; plot_fig5_5_from_merged_csv('summary_all.csv','plots_report',1000)"
-python -c "from visualization import plot_fig5_6_from_merged_csv; plot_fig5_6_from_merged_csv('summary_all.csv','plots_report',1000)"
-python -c "from visualization import plot_fig5_7_from_merged_csv; plot_fig5_7_from_merged_csv('summary_all.csv','plots_report',1000)"
-python -c "from visualization import plot_fig5_8_from_merged_csv; plot_fig5_8_from_merged_csv('summary_all.csv','plots_report',1000)"
+python -c "from visualization import plot_fig5_1_from_merged_csv; plot_fig5_1_from_merged_csv('results/summary_all.csv','results/plots_report',1000)"
+python -c "from visualization import plot_fig5_3_from_merged_csv; plot_fig5_3_from_merged_csv('results/summary_all.csv','results/plots_report',1000)"
+python -c "from visualization import plot_fig5_5_from_merged_csv; plot_fig5_5_from_merged_csv('results/summary_all.csv','results/plots_report',1000)"
+python -c "from visualization import plot_fig5_6_from_merged_csv; plot_fig5_6_from_merged_csv('results/summary_all.csv','results/plots_report',1000)"
+python -c "from visualization import plot_fig5_7_from_merged_csv; plot_fig5_7_from_merged_csv('results/summary_all.csv','results/plots_report',1000)"
+python -c "from visualization import plot_fig5_8_from_merged_csv; plot_fig5_8_from_merged_csv('results/metrics_long_all.csv','results/plots_report',1000)"
 ```
 All figures are saved in:
-plots_report/
+results/plots_report/
 
 Step 4: Model Confidence Set (MCS) Analysis
 (A) RMSE-based MCS
 ```bash
-python mcs_test.py --in_csv metrics_long_all.csv --out_csv mcs_n1000_rmse.csv --n 1000 --metric rmse --B 2000 --alpha 0.05
+python mcs_test.py --in_csv results/metrics_long_all.csv --out_csv results/mcs_n1000_rmse.csv --n 1000 --metric rmse --B 2000 --alpha 0.05
 ```
 
 (B) Coverage-deviation-based MCS
 ```bash
-python mcs_test.py --in_csv metrics_long_all.csv --out_csv mcs_n1000_covdev.csv --n 1000 --metric pointwise_cover_rate --loss_transform abs_dev_from_nominal --nominal 0.95 --B 2000 --alpha 0.05
+python mcs_test.py --in_csv results/metrics_long_all.csv --out_csv results/mcs_n1000_covdev.csv --n 1000 --metric pointwise_cover_rate --loss_transform abs_dev_from_nominal --nominal 0.95 --B 2000 --alpha 0.05
 ```
 
 # 4. Design Overview
@@ -140,3 +156,4 @@ This allows systematic evaluation of estimation accuracy and inferential robustn
 All simulations use paired Monte Carlo design.
 All confounders are observed.
 Results are fully reproducible under the specified environment.
+

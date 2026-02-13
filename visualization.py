@@ -329,8 +329,8 @@ def plot_fig5_3_clan_decomposition(
 
 
 def plot_fig5_3_from_merged_csv(
-    summary_csv: str = "summary_all.csv",
-    outdir: str = "plots_report",
+    summary_csv: str = "results/summary_all.csv",
+    outdir: str = "results/plots_report",
     n_ref: int = 1000,
 ) -> str:
 
@@ -513,8 +513,8 @@ def plot_fig5_5_inference_tradeoffs(
 
 
 def plot_fig5_5_from_merged_csv(
-    summary_csv: str = "summary_all.csv",
-    outdir: str = "plots_report",
+    summary_csv: str = "results/summary_all.csv",
+    outdir: str = "results/plots_report",
     n_ref: int = 1000,
 ) -> str:
     summary = pd.read_csv(summary_csv)
@@ -742,8 +742,8 @@ def plot_fig5_6_coverage_diagnostics(
 
 
 def plot_fig5_6_from_merged_csv(
-    summary_csv: str = "summary_all.csv",
-    outdir: str = "plots_report",
+    summary_csv: str = "results/summary_all.csv",
+    outdir: str = "results/plots_report",
     n_ref: int = 1000,
 ) -> str:
 
@@ -861,8 +861,8 @@ def plot_fig5_7_one_factor_sensitivity(
 
 
 def plot_fig5_7_from_merged_csv(
-    summary_csv: str = "summary_all.csv",
-    outdir: str = "plots_report",
+    summary_csv: str = "results/summary_all.csv",
+    outdir: str = "results/plots_report",
     n_ref: int = 1000,
 ) -> str:
 
@@ -1074,10 +1074,11 @@ def plot_fig5_8_overlap_alignment_interaction(
 
 
 def plot_fig5_8_from_merged_csv(
-    metrics_csv: str = "metrics_long_all.csv",
-    outdir: str = "plots_report",
+    metrics_csv: str = "results/metrics_long_all.csv",
+    outdir: str = "results/plots_report",
     n_ref: int = 1000,
 ) -> str:
+
     metrics_long = pd.read_csv(metrics_csv)
     path = plot_fig5_8_overlap_alignment_interaction(metrics_long, outdir=outdir, n_ref=n_ref)
     print("[DONE] Figure 5-8 saved to:", path)

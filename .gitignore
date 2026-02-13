@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+results/
+results_DGP*/
+*.csv
+
+# results / outputs
+results/
+
+# common artifacts
+*.log
+*.png
+*.pdf
