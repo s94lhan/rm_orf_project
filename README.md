@@ -62,7 +62,7 @@ python main.py --outdir results_DGP6 --seed 123 --R 30 --dgps DGP6 --methods ORF
 python main.py --outdir results_DGP7 --seed 123 --R 30 --dgps DGP7 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
 python main.py --outdir results_DGP8 --seed 123 --R 30 --dgps DGP8 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
 python main.py --outdir results_DGP_RCT --seed 123 --R 30 --dgps RCT --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
-python main.py --outdir results_DGP0 --seed 123 --R 30 --dgps DGP0 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+
 ```
 This generates result folders such as:
 results_DGP0
