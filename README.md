@@ -53,6 +53,16 @@ Step 1: Run Simulations for a Single DGP
 Example command:
 ```bash
 python main.py --outdir results_DGP0 --seed 123 --R 30 --dgps DGP0 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results_DGP1 --seed 123 --R 30 --dgps DGP1 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results_DGP2 --seed 123 --R 30 --dgps DGP2 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results_DGP3 --seed 123 --R 30 --dgps DGP3 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results_DGP4 --seed 123 --R 30 --dgps DGP4 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results_DGP5 --seed 123 --R 30 --dgps DGP5 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results_DGP6 --seed 123 --R 30 --dgps DGP6 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results_DGP7 --seed 123 --R 30 --dgps DGP7 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results_DGP8 --seed 123 --R 30 --dgps DGP8 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results_DGP_RCT --seed 123 --R 30 --dgps RCT --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
+python main.py --outdir results_DGP0 --seed 123 --R 30 --dgps DGP0 --methods ORF CF DML-CF --n_list 250 500 1000 --N_test 500 --diag_misspec --n_jobs 10
 ```
 This generates result folders such as:
 results_DGP0
