@@ -1,13 +1,13 @@
+# Python cache
 __pycache__/
 *.pyc
-results/
-results_DGP*/
-*.csv
 
-# results / outputs
-results/
+# Ignore raw Monte Carlo outputs
+results/results_DGP*/
 
-# common artifacts
+# Ignore temp & logs
 *.log
-*.png
-*.pdf
+
+# Ignore binary temp files
+*.npy
+*.npz

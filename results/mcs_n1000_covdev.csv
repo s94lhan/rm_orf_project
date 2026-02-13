@@ -1,0 +1,11 @@
+dgp,n,metric,loss_transform,alpha,B,T_used,mcs_included,elim_order,elim_pvalues,n_methods_included
+DGP0,1000,pointwise_cover_rate,abs_dev_from_nominal,0.05,2000,30,ORF,"CF,DML-CF","0,0",1
+DGP1,1000,pointwise_cover_rate,abs_dev_from_nominal,0.05,2000,30,ORF,"CF,DML-CF","0,0",1
+DGP2,1000,pointwise_cover_rate,abs_dev_from_nominal,0.05,2000,30,ORF,"CF,DML-CF","0,0",1
+DGP3,1000,pointwise_cover_rate,abs_dev_from_nominal,0.05,2000,30,ORF,"CF,DML-CF","0,0",1
+DGP4,1000,pointwise_cover_rate,abs_dev_from_nominal,0.05,2000,30,ORF,"CF,DML-CF","0,0",1
+DGP5,1000,pointwise_cover_rate,abs_dev_from_nominal,0.05,2000,30,"ORF,CF,DML-CF",,,3
+DGP6,1000,pointwise_cover_rate,abs_dev_from_nominal,0.05,2000,30,ORF,"DML-CF,CF","0,0.0275",1
+DGP7,1000,pointwise_cover_rate,abs_dev_from_nominal,0.05,2000,30,ORF,"DML-CF,CF","0,0",1
+DGP8,1000,pointwise_cover_rate,abs_dev_from_nominal,0.05,2000,30,ORF,"DML-CF,CF","0,0",1
+RCT,1000,pointwise_cover_rate,abs_dev_from_nominal,0.05,2000,30,ORF,"CF,DML-CF","0,0",1

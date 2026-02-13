@@ -1,0 +1,11 @@
+dgp,n,metric,loss_transform,alpha,B,T_used,mcs_included,elim_order,elim_pvalues,n_methods_included
+DGP0,1000,rmse,identity,0.05,2000,30,DML-CF,"CF,ORF","0,0",1
+DGP1,1000,rmse,identity,0.05,2000,30,DML-CF,"CF,ORF","0,0",1
+DGP2,1000,rmse,identity,0.05,2000,30,DML-CF,"ORF,CF","0,0",1
+DGP3,1000,rmse,identity,0.05,2000,30,DML-CF,"ORF,CF","0,0",1
+DGP4,1000,rmse,identity,0.05,2000,30,DML-CF,"ORF,CF","0,0",1
+DGP5,1000,rmse,identity,0.05,2000,30,DML-CF,"ORF,CF","0,0",1
+DGP6,1000,rmse,identity,0.05,2000,30,"CF,DML-CF",ORF,0,2
+DGP7,1000,rmse,identity,0.05,2000,30,CF,"ORF,DML-CF","0,0.001",1
+DGP8,1000,rmse,identity,0.05,2000,30,CF,"ORF,DML-CF","0,0",1
+RCT,1000,rmse,identity,0.05,2000,30,DML-CF,"CF,ORF","0,0",1
