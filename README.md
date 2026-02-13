@@ -50,6 +50,8 @@ rm_orf_project/
 ├── mcs_test.py            # Model Confidence Set (MCS) analysis
 ├── results/               # All experiment outputs
 │   ├── results_DGP*/      # Raw analog output of each DGP
+│   │                      #（The Github open-source code does not upload the specific results for each DGP, only the summarized results. During the reproduction process,
+│   │                        the individual results for each DGP are automatically stored here.）
 │   ├── metrics_long_all.csv   # Merged Indicators
 │   ├── summary_all.csv        # Summarize statistical results (plot input)
 │   ├── z_diagnostics_all/     # Z-statistical calibration diagnostic chart
@@ -156,4 +158,5 @@ This allows systematic evaluation of estimation accuracy and inferential robustn
 All simulations use paired Monte Carlo design.
 All confounders are observed.
 Results are fully reproducible under the specified environment.
+
 
